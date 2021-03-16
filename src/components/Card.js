@@ -1,20 +1,31 @@
 const Card = ({ data }) => {
-  // add a way to check if kicks are singular or plural
+  
 
   const { name, logo, kicks, longitude, latitude } = data;
+  const { walk_in, receipt, scan } = kicks
+
+  // checks if kicks are singular or plural
+  const checkPlural = (num) => {
+    if (num === 1) {
+      return ''
+    } else {
+      return 's'
+    }
+  }
+
   return (
     <li className="card">
       <img className="card__logo" src={logo} alt=""></img>
       <p className="card__name">{name}</p>
       <ul className="card__kicks">
         <li>
-          <p>{kicks.walk_in} Walk-ins</p>
+          <p>{walk_in} Walk-in{checkPlural(walk_in)}</p>
         </li>
         <li>
-          <p>{kicks.receipt} Receipts</p>
+          <p>{receipt} Receipt{checkPlural(receipt)}</p>
         </li>
         <li>
-          <p>{kicks.scan} Scans</p>
+          <p>{scan} Scan{checkPlural(scan)}</p>
         </li>
       </ul>
     </li>

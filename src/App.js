@@ -6,12 +6,13 @@ import Card from './components/Card';
 
 
 function App() {
+  //TODO refactor state?
   const [data, setData] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
   
   // the API returns an object that contains a 'locations' arr and a 'next_page' property
   // 'next-page' is probably useful for pagination //! Dont forget to access it later
-  // 'location' contains the info I need to display so I saved it in its own constant
+  // 'location' contains the info I need to display 
   useEffect(() => {
     setIsLoading(true);
     fetch('http://demo2020460.mockable.io/location')
@@ -54,7 +55,7 @@ export default App;
 //// 3. Query API and save the returned data to state (fetch)
 // 4. Loop over the data and render it on the page
   // 4a. Pass the props to Card.js
-  // 4b. 
+  // 4b. Write an if sttmnt to check if the locations array is empty
 // >. ERROR HANDLING
 
 // >. Come up with DESIGN
