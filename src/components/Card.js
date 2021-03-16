@@ -1,19 +1,20 @@
-const Card = (props) => {
+const Card = ({ data }) => {
+  // add a way to check if kicks are singular or plural
 
-  // console.log(props.data);
+  const { name, logo, kicks, longitude, latitude } = data;
   return (
     <li className="card">
-      <img className="card__logo" alt=""></img>
-      <p className="card__name">Big store</p>
+      <img className="card__logo" src={logo} alt=""></img>
+      <p className="card__name">{name}</p>
       <ul className="card__kicks">
         <li>
-          <p>3 Walk-ins</p>
+          <p>{kicks.walk_in} Walk-ins</p>
         </li>
         <li>
-          <p>2 Receipts</p>
+          <p>{kicks.receipt} Receipts</p>
         </li>
         <li>
-          <p>2 Scans</p>
+          <p>{kicks.scan} Scans</p>
         </li>
       </ul>
     </li>
