@@ -1,6 +1,7 @@
 import './App.css';
 import { useState, useEffect } from 'react';
 import Card from './components/Card';
+import LocationList from './components/LocationList';
 
 
 
@@ -21,26 +22,13 @@ function App() {
       setData(data.locations);
       setIsLoading(false)
     })
+    .catch(error => console.log(error))
   }, [])
-  
-  // creates a list of Card components that accept a location object as props. This list will be rendered on the page
-  const locationList = data.map((item, i) => {
-    return (
-      <Card data={item} key={i}/> 
-    )
-  })
 
 
   return (
     <div className="App">
-      {isLoading ? 
-        <p>Hold on</p>
-        : 
-        <ul>
-         {locationList}
-        </ul>
-      }
-      
+      <LocationList data={data} isLoading={isLoading} />
     </div>
   )
 }
@@ -49,13 +37,14 @@ export default App;
 
 
 
-
 //// 1. Create card component
 //// 2. Create app state
 //// 3. Query API and save the returned data to state (fetch)
-// 4. Loop over the data and render it on the page
-  // 4a. Pass the props to Card.js
+//// 4. Loop over the data and render it on the page
+  //// 4a. Pass the props to Card.js
   // 4b. Write an if sttmnt to check if the locations array is empty
+  //// 4c. Create a separate locations list component
+  // 4d. create a preloader
 // >. ERROR HANDLING
 
 // >. Come up with DESIGN
