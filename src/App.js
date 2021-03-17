@@ -62,6 +62,9 @@ export default App;
     //8a. Refactor Kicks as a separate component
 
 // BONUS
-// 9. Query video API and display the list of videos on the page (make them playable)
-  // 9a. Use Router
+// 9. Videos
+//// 9a. Use Router
+  // 9b. Query API and store data
+  // 9c. display the list of videos thumbnails on the page and two-way bind them to a checkbox input
+  // 9d. create a video player
 // 10. Create map pin functionality

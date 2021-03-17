@@ -6,13 +6,13 @@ import InfiniteScroll from 'react-infinite-scroll-component';
 
 
 const StoresPage = () => {
-  const [
+  const {
     data,
     page,
     isLoading,
     hasMore,
     fetchData
-  ] = useFetchData()
+   } = useFetchData()
 
 
 

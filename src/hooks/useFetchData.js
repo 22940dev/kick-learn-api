@@ -25,7 +25,7 @@ const useFetchData = () => {
     }).catch(error => console.log(error))
   }
 
-  return [data, isLoading, page, hasMore, fetchData]
+  return {data, isLoading, page, hasMore, fetchData}
 }
 
 export default useFetchData;
