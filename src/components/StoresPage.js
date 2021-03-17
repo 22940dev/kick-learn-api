@@ -1,15 +1,15 @@
 import Card from './Card';
 import useFetchData from '../hooks/useFetchData';
-import {useEffect} from 'react'
+import { useEffect } from 'react'
 import InfiniteScroll from 'react-infinite-scroll-component';
 
 
 
-const Locations = () => {
+const StoresPage = () => {
   const [
     data,
-    isLoading,
     page,
+    isLoading,
     hasMore,
     fetchData
   ] = useFetchData()
@@ -18,7 +18,7 @@ const Locations = () => {
 
   // the API returns an object that contains a 'locations' (arr) and a 'next_page'(str)
   useEffect(() => {
-    fetchData(page)
+    fetchData(page, 'location')
   }, [])
 
 
@@ -32,7 +32,7 @@ const Locations = () => {
   return (
     <InfiniteScroll
       dataLength={data.length}
-      next={() => fetchData(page)}
+      next={() => fetchData(page, 'location')}
       hasMore={hasMore}
       loader={<p>Hold On</p>}
       className='scroll'
@@ -45,4 +45,4 @@ const Locations = () => {
   )
 }
 
-export default Locations;
+export default StoresPage;
