@@ -1,6 +1,7 @@
 import Card from './Card';
 import useFetchData from '../hooks/useFetchData';
 import {useEffect} from 'react'
+import InfiniteScroll from 'react-infinite-scroll-component';
 
 
 
@@ -29,16 +30,26 @@ const Locations = () => {
   })
 
   return (
-    <ul>
-      {isLoading ?
-        <p>Hold On...</p>
-        :
-        locationList
-      }
-    </ul>
+    <InfiniteScroll
+      dataLength={data.length}
+      next={() => fetchData(page)}
+      hasMore={hasMore}
+      loader={<p>Hold On</p>}
+    >
+      <ul>
+        {locationList}
+      </ul>
+    </InfiniteScroll>
+    
   )
 }
 
 export default Locations;
 
 
+// {
+//   isLoading ?
+//     <p>Hold On...</p>
+//     :
+//     locationList
+// }
