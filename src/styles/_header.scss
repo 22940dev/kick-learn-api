@@ -27,8 +27,10 @@
       font-size: 2rem;
       margin: 0 2rem;
       position: relative;
+      transition: all 0.3s;
 
-      &:hover::before {
+      &::before {
+        transition: all 0.3s;
         content: '';
         display: block;
         width: 100%;
@@ -38,6 +40,11 @@
         z-index: 10;
         bottom: 5px;
         left:0;
+        opacity: 0;
+      }
+
+      &:hover::before {
+        opacity: 1;
       }
     }
 }
