@@ -4,7 +4,7 @@
   
   &__flex-parent {
     @include flex($justify: space-between,  $align: center);
-    padding: 1rem 0;
+    padding: $space-s 0;
   }
 
   &__logo  {
@@ -21,7 +21,7 @@
 
   &__nav-link {
     font-size: 2rem;
-    margin: 0 2rem;
+    margin: 0 $space-m;
     padding: 1.5rem 0;
     position: relative;
     transition: all 0.3s;

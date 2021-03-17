@@ -37,6 +37,7 @@
   &__kicks {
     @include flex ($justify: space-between);
     grid-area: kicks;
+    align-self: end;
 
     & li {
       @include flex (column, center, center)
@@ -44,15 +45,15 @@
 
     &-icon-container {
       @include flex(default, center, center);
-      width: 6rem;
-      height: 6rem;
+      width: calc(5rem + 0.5vw);
+      height: calc(5rem + 0.5vw);
       border: 3px solid $secondary;
       border-radius: 50%;
       margin-bottom: $space-s;
     }
   
     &-icon {
-      font-size: 3rem;
+      font-size: calc(2rem + 0.5vw);
       color: $secondary;
     }
 

@@ -1,6 +1,7 @@
 import './App.scss';
 import LocationList from './components/LocationList';
 import Header from './components/Header';
+import ScrollToTop from 'react-scroll-to-top';
 
 
 
@@ -8,6 +9,7 @@ function App() {
   
   return (
     <div className="App">
+      <ScrollToTop smooth color="#0098D6"/>
       <Header />
       <main>
         <div className="wrapper">
