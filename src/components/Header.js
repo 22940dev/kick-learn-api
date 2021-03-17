@@ -1,4 +1,5 @@
 import logo from '../assets/logo-white.png';
+import { Link } from 'react-router-dom';
 
 const Header = () => {
 
@@ -7,18 +8,18 @@ const Header = () => {
       <div className="wrapper header__flex-parent">
 
         <div className="header__logo">
-          <a href="index.html">
+          <Link to="/">
             <img src={logo} alt="Shopkick"/>
-          </a>
+          </Link>
         </div>
 
         <nav className="header__nav">
           <ul>
             <li>
-              <a className="header__nav-link" href="#">Stores</a>
+              <Link to="/" className="header__nav-link">Stores</Link>
             </li>
             <li>
-              <a className="header__nav-link" href="#">Videos</a>
+              <Link to="/videos" className="header__nav-link">Videos</Link>
             </li>
           </ul>
         </nav>
