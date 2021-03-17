@@ -1,6 +1,5 @@
 import './App.css';
-import { useState, useEffect } from 'react';
-import axios from 'axios';
+
 
 import LocationList from './components/LocationList';
 
@@ -8,32 +7,10 @@ import LocationList from './components/LocationList';
 
 
 function App() {
-  const [data, setData] = useState([]);
-  const [isLoading, setIsLoading] = useState(false);
-  const [page, setPage] = useState(0);
-  const [hasMore, setHasMore] = useState(true)
   
-  // the API returns an object that contains a 'locations' (arr) and a 'next_page'(str)
-  useEffect(() => {
-    setIsLoading(true);
-    axios({
-      url: `http://demo2020460.mockable.io/location?page=${page}`,
-      method: 'GET',
-      responseType: 'json'
-    }).then(res => {
-      // append fetched data to state
-      setData(prevData => [...prevData, ...res.data.locations]);
-      // if there's a next page, increment page in state. If there isn't, turn off hasMore flag
-      res.data.next_page ? setPage(prevPage => prevPage + 1) : setHasMore(false)
-      setIsLoading(false)
-    }).catch(error => console.log(error))
-  }, [])
-
-  console.log(page)
-
   return (
     <div className="App">
-      <LocationList data={data} isLoading={isLoading} />
+      <LocationList />
     </div>
   )
 }
