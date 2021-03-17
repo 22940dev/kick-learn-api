@@ -1,8 +1,6 @@
-import './App.css';
-
-
+import './App.scss';
 import LocationList from './components/LocationList';
-
+import Header from './components/Header';
 
 
 
@@ -10,6 +8,7 @@ function App() {
   
   return (
     <div className="App">
+      <Header />
       <LocationList />
     </div>
   )
