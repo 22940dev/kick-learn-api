@@ -1,0 +1,24 @@
+// COLORS
+$primary:  #FFF;
+$primary-darker: #DCE1E6;
+$secondary: #0098D6;
+$secondary-light: #ecf9ff;
+$accent: #FDBA12;
+$accent-light: #FECF5A;
+$typo: #2D3237;
+
+@mixin flex ($direction: row, $justify: start, $align: center) {
+  display: flex;
+  flex-direction: $direction;
+  justify-content: $justify;
+  align-items: $align;
+}
+
+@mixin grid ($rows: 1, $columns: 1, $gap: 0) {
+  display: grid;
+  grid-template-rows: $rows;
+  grid-template-columns: $columns;
+  grid-gap: $gap;
+}
+
+

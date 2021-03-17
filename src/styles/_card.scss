@@ -1,0 +1,36 @@
+.card  {
+  @include grid((repeat(2, 1fr)), (20% auto), 4rem);
+  grid-template-areas: 
+  "logo title"
+  "logo kicks";
+  padding: 2rem;
+  margin: 3rem 0;
+  background-color: $secondary-light;
+
+  &__logo {
+    grid-area: logo;
+    border-radius: 50%;
+  }
+
+  &__name {
+    grid-area: title;
+  }
+
+  &__kicks {
+    @include flex ($justify: space-between);
+    grid-area: kicks;
+  }
+
+  &__kicks-icon-container {
+    @include flex(default, center, center);
+    width: 6rem;
+    height: 6rem;
+    border: 2px solid $secondary;
+    border-radius: 50%;
+  }
+
+  &__kicks-icon {
+    font-size: 3.5rem;
+    color: $secondary;
+  }
+}
