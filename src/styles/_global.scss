@@ -53,3 +53,8 @@ button {
   margin: 0 auto;
 }
 
+// override for Infinite Scroll component's scrollbar showing by default
+.scroll {
+  overflow: unset !important;
+}
+

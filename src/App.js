@@ -9,7 +9,11 @@ function App() {
   return (
     <div className="App">
       <Header />
-      <LocationList />
+      <main>
+        <div className="wrapper">
+          <LocationList />
+        </div>
+      </main>
     </div>
   )
 }

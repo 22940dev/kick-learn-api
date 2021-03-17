@@ -35,6 +35,7 @@ const Locations = () => {
       next={() => fetchData(page)}
       hasMore={hasMore}
       loader={<p>Hold On</p>}
+      className='scroll'
     >
       <ul>
         {locationList}

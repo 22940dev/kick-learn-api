@@ -1,11 +1,27 @@
 .card  {
-  @include grid((repeat(2, 1fr)), (20% auto), 4rem);
+  @include grid((1fr, auto), (20% auto), ($space-s $space-l));
   grid-template-areas: 
   "logo title"
   "logo kicks";
-  padding: 2rem;
+  align-content: center;
+
+  padding: $space-l ($space-l * 2);
   margin: 3rem 0;
   background-color: $secondary-light;
+  position: relative;
+  border-radius: $corner;
+
+  &::before {
+    content: '';
+    display: block;
+    width: $space-l;
+    background-color: $secondary;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    border-radius: $corner 0 0 $corner;
+  }
 
   &__logo {
     grid-area: logo;
@@ -14,23 +30,36 @@
 
   &__name {
     grid-area: title;
+    font-size: 2.5rem;
+    font-weight: bold;
   }
 
   &__kicks {
     @include flex ($justify: space-between);
     grid-area: kicks;
+
+    & li {
+      @include flex (column, center, center)
+    }
+
+    &-icon-container {
+      @include flex(default, center, center);
+      width: 6rem;
+      height: 6rem;
+      border: 3px solid $secondary;
+      border-radius: 50%;
+      margin-bottom: $space-s;
+    }
+  
+    &-icon {
+      font-size: 3rem;
+      color: $secondary;
+    }
+
+    &-count {
+      font-weight: bold;
+    }
+
   }
 
-  &__kicks-icon-container {
-    @include flex(default, center, center);
-    width: 6rem;
-    height: 6rem;
-    border: 2px solid $secondary;
-    border-radius: 50%;
-  }
-
-  &__kicks-icon {
-    font-size: 3.5rem;
-    color: $secondary;
-  }
 }

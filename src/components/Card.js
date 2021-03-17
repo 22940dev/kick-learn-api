@@ -32,7 +32,7 @@ const Card = ({ data }) => {
               icon={faWalking} 
               aria-hidden="true"/>
           </div>
-          <p>{walk_in} Walk-in{checkPlural(walk_in)}</p>
+          <p><span className="card__kicks-count">{walk_in}</span> Walk-in{checkPlural(walk_in)}</p>
         </li>
 
         <li>
@@ -42,7 +42,7 @@ const Card = ({ data }) => {
               icon={faReceipt} 
               aria-hidden="true" />
           </div>
-          <p>{receipt} Receipt{checkPlural(receipt)}</p>
+          <p><span className="card__kicks-count">{receipt}</span> Receipt{checkPlural(receipt)}</p>
         </li>
 
         <li>
@@ -52,9 +52,9 @@ const Card = ({ data }) => {
               icon={faQrcode} 
               aria-hidden="true" />
           </div>
-          <p>{scan} Scan{checkPlural(scan)}</p>
+          <p><span className="card__kicks-count">{scan}</span> Scan{checkPlural(scan)}</p>
         </li>
-        
+
       </ul>
     </li>
   )

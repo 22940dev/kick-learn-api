@@ -7,6 +7,19 @@ $accent: #FDBA12;
 $accent-light: #FECF5A;
 $typo: #2D3237;
 
+
+// OTHER VARIABLES
+$corner: 6px;
+$space-s: 1rem;
+$space-m: 2rem;
+$space-l: 4rem;
+// $space-l:
+
+
+
+// MIXINS
+
+// Flex
 @mixin flex ($direction: row, $justify: start, $align: center) {
   display: flex;
   flex-direction: $direction;
@@ -14,6 +27,7 @@ $typo: #2D3237;
   align-items: $align;
 }
 
+// Grid
 @mixin grid ($rows: 1, $columns: 1, $gap: 0) {
   display: grid;
   grid-template-rows: $rows;
