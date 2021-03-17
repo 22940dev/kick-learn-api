@@ -1,6 +1,7 @@
 import './App.css';
 import { useState, useEffect } from 'react';
-import Card from './components/Card';
+import axios from 'axios';
+
 import LocationList from './components/LocationList';
 
 
@@ -16,15 +17,17 @@ function App() {
   // 'location' contains the info I need to display 
   useEffect(() => {
     setIsLoading(true);
-    fetch('http://demo2020460.mockable.io/location')
-    .then(res => res.json())
-    .then(data => {
-      setData(data.locations);
+    axios({
+      url: 'http://demo2020460.mockable.io/location',
+      method: 'GET',
+      responseType: 'json'
+    }).then(res => {
+      setData(res.data.locations);
       setIsLoading(false)
-    })
-    .catch(error => console.log(error))
+    }).catch(error => console.log(error))
   }, [])
 
+  console.log(data)
 
   return (
     <div className="App">
