@@ -1,24 +1,28 @@
+import logo from '../assets/logo-white.png';
 
 const Header = () => {
 
   return (
-    <header>
-      <div className="header__logo">
-        <a href="index.html">
-          Shopkick
-        </a>
-      </div>
+    <header className="header">
+      <div className="wrapper header__flex-parent">
 
-      <nav className="header__ nav">
-        <ul>
-          <li>
-            <a href="#">Stores</a>
-          </li>
-          <li>
-            <a href="#">Videos</a>
-          </li>
-        </ul>
-      </nav>
+        <div className="header__logo">
+          <a href="index.html">
+            <img src={logo} alt="Shopkick"/>
+          </a>
+        </div>
+
+        <nav className="header__nav">
+          <ul>
+            <li>
+              <a className="header__nav-link" href="#">Stores</a>
+            </li>
+            <li>
+              <a className="header__nav-link" href="#">Videos</a>
+            </li>
+          </ul>
+        </nav>
+      </div>
     </header>
   );
 }
