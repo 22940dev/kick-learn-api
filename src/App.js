@@ -31,11 +31,11 @@ export default App;
 // >. Come up with DESIGN
 // 5. Add SCSS stylesheet?
 // 6. Style
-// 7. Implement infinite scroll
-  // 7a. move API call into a custom hook
-  // 7b. change the endpoint to accept a page# variable
-  // 7c. create state for page number and hasNext (?) - OR can I use the link that's in the json??
-  // 7d. run an API call when user scrolls
+//// 7. Implement infinite scroll
+  //// 7a. move API call into a custom hook
+  //// 7b. change the endpoint to accept a page# variable
+  //// 7c. create state for page number and hasNext (?) - OR can I use the link that's in the json??
+  //// 7d. run an API call when user scrolls
   // 7e. Add Scroll to top
 
 // BONUS
