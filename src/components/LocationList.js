@@ -45,11 +45,3 @@ const Locations = () => {
 }
 
 export default Locations;
-
-
-// {
-//   isLoading ?
-//     <p>Hold On...</p>
-//     :
-//     locationList
-// }
