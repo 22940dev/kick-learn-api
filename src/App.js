@@ -8,26 +8,28 @@ import LocationList from './components/LocationList';
 
 
 function App() {
-  //TODO refactor state?
   const [data, setData] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
+  const [page, setPage] = useState(0);
+  const [hasMore, setHasMore] = useState(true)
   
-  // the API returns an object that contains a 'locations' arr and a 'next_page' property
-  // 'next-page' is probably useful for pagination //! Dont forget to access it later
-  // 'location' contains the info I need to display 
+  // the API returns an object that contains a 'locations' (arr) and a 'next_page'(str)
   useEffect(() => {
     setIsLoading(true);
     axios({
-      url: 'http://demo2020460.mockable.io/location',
+      url: `http://demo2020460.mockable.io/location?page=${page}`,
       method: 'GET',
       responseType: 'json'
     }).then(res => {
-      setData(res.data.locations);
+      // append fetched data to state
+      setData(prevData => [...prevData, ...res.data.locations]);
+      // if there's a next page, increment page in state. If there isn't, turn off hasMore flag
+      res.data.next_page ? setPage(prevPage => prevPage + 1) : setHasMore(false)
       setIsLoading(false)
     }).catch(error => console.log(error))
   }, [])
 
-  console.log(data)
+  console.log(page)
 
   return (
     <div className="App">
@@ -54,7 +56,11 @@ export default App;
 // 5. Add SCSS stylesheet?
 // 6. Style
 // 7. Implement infinite scroll
-// 7a. Add Scroll to top
+  // 7a. move API call into a custom hook
+  // 7b. change the endpoint to accept a page# variable
+  // 7c. create state for page number and hasNext (?) - OR can I use the link that's in the json??
+  // 7d. run an API call when user scrolls
+  // 7e. Add Scroll to top
 
 // BONUS
 // 8. Query video API and display the list of videos on the page (make them playable)
