@@ -28,9 +28,16 @@ export default App;
   // 4d. create a preloader
 // >. ERROR HANDLING
 
-// >. Come up with DESIGN
-// 5. Add SCSS stylesheet?
+//// >. Come up with DESIGN
+//// 5. Add SCSS stylesheet?
 // 6. Style
+  //// >. Get fonts
+  //// >. Get colors
+  //// >. Change title and favicon
+  // 6a. Style header
+  // 6b. Style Card
+  // 6c. Style List
+  // 6d. Style general app
 //// 7. Implement infinite scroll
   //// 7a. move API call into a custom hook
   //// 7b. change the endpoint to accept a page# variable
