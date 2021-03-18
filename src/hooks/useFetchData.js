@@ -13,7 +13,7 @@ const useFetchData = () => {
   const fetchData = (page, query) => {
     setIsLoading(true); // loading started
     axios({
-      url: `http://demo2020460.mockable.io/${query}?page=${page}`,
+      url: `https://demo2020460.mockable.io/${query}?page=${page}`,
       method: 'GET',
       responseType: 'json'
     }).then(res => {

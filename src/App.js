@@ -1,5 +1,5 @@
 import './App.scss';
-import { BrowserRouter as Router, Route} from 'react-router-dom';
+import { HashRouter as Router, Route} from 'react-router-dom';
 import Header from './components/Header';
 import StoresPage from './components/StoresPage';
 import VideosPage from './components/VideosPage';
@@ -10,7 +10,7 @@ import ScrollToTop from 'react-scroll-to-top'; // scroll to top button
 function App() {
   
   return (
-    <Router basename={process.env.PUBLIC_URL}>
+    <Router basename="/">
       <div className="App">
         <ScrollToTop 
           smooth 
