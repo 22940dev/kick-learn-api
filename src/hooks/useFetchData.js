@@ -6,12 +6,12 @@ import axios from 'axios';
 const useFetchData = () => {
   const [data, setData] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
-  const [page, setPage] = useState(0);
-  const [hasMore, setHasMore] = useState(true)
+  const [page, setPage] = useState(0); // tracks data page #
+  const [hasMore, setHasMore] = useState(true) // tracks if more pages are available
 
 
   const fetchData = (page, query) => {
-    setIsLoading(true);
+    setIsLoading(true); // loading started
     axios({
       url: `http://demo2020460.mockable.io/${query}?page=${page}`,
       method: 'GET',
@@ -19,9 +19,9 @@ const useFetchData = () => {
     }).then(res => {
       // append fetched data to state
       setData(prevData => [...prevData, ...res.data[query + 's']]);
-      // if there's a next page, increment page in state. If there isn't, turn off hasMore flag
+      // if there's a next page, increment page in state. If there isn't, set 'hasMore' to false
       res.data.next_page ? setPage(prevPage => prevPage + 1) : setHasMore(false)
-      setIsLoading(false)
+      setIsLoading(false) // loading finished
     }).catch(error => {
       console.log(error);
       setIsLoading(false)

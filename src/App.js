@@ -3,7 +3,7 @@ import { BrowserRouter as Router, Route} from 'react-router-dom';
 import Header from './components/Header';
 import StoresPage from './components/StoresPage';
 import VideosPage from './components/VideosPage';
-import ScrollToTop from 'react-scroll-to-top';
+import ScrollToTop from 'react-scroll-to-top'; // scroll to top button
 
 
 
@@ -35,10 +35,8 @@ export default App;
 //// 3. Query API and save the returned data to state (fetch)
 //// 4. Loop over the data and render it on the page
   //// 4a. Pass the props to Card.js
-  // 4b. Write an if sttmnt to check if the locations array is empty
   //// 4c. Create a separate locations list component
   // 4d. create a preloader
-// >. ERROR HANDLING
 
 //// >. Come up with DESIGN
 //// 5. Add SCSS stylesheet?
@@ -60,11 +58,13 @@ export default App;
   //// 7e. Add Scroll to top
   // 8. Refactor
     //8a. Refactor Kicks as a separate component
+    //8b. Refactor playlist as a separate component
+    //8c. Refactor video thumbnails as separate components
 
 // BONUS
-// 9. Videos
+//// 9. Videos
 //// 9a. Use Router
   //// 9b. Query API and store data
-  // 9c. display the list of videos thumbnails on the page and two-way bind them to a checkbox input
+  //// 9c. display the list of videos thumbnails on the page and two-way bind them to a checkbox input
   //// 9d. create a video player
 // 10. Create map pin functionality

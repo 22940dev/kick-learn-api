@@ -4,11 +4,10 @@ import { faWalking, faReceipt, faQrcode } from '@fortawesome/free-solid-svg-icon
 
 const Card = ({ data }) => {
   
-
-  const { name, logo, kicks, longitude, latitude } = data;
+  const { name, logo, kicks } = data;
   const { walk_in, receipt, scan } = kicks
 
-  // checks if kicks are singular or plural
+  // checks if kicks are singular or plural, and adds suffix 's' if they are plural
   const checkPlural = (num) => {
     if (num === 1) {
       return ''
@@ -17,14 +16,12 @@ const Card = ({ data }) => {
     }
   }
 
-  //TODO: REFACTOR KICKS INTO A COMPONENT IF THERES TIME
   return (
     <li className="card">
       <img className="card__logo" src={logo} alt=""></img>
       <p className="card__name">{name}</p>
 
       <ul className="card__kicks">
-
         <li>
           <div className="card__kicks-icon-container">
             <FontAwesomeIcon 

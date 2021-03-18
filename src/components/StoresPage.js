@@ -1,7 +1,7 @@
-import Card from './Card';
-import useFetchData from '../hooks/useFetchData';
 import { useEffect } from 'react'
-import InfiniteScroll from 'react-infinite-scroll-component';
+import useFetchData from '../hooks/useFetchData';
+import InfiniteScroll from 'react-infinite-scroll-component'; 
+import Card from './Card';
 
 
 
@@ -9,11 +9,9 @@ const StoresPage = () => {
   const {
     data,
     page,
-    isLoading,
     hasMore,
     fetchData
    } = useFetchData()
-
 
 
   // the API returns an object that contains a 'locations' (arr) and a 'next_page'(str)
@@ -22,7 +20,7 @@ const StoresPage = () => {
   }, [])
 
 
-  // creates a list of Card components that accept a location object as props. This list will be rendered on the page
+  // creates a list of Card components that accept a location object as a props
   const locationList = data.map((item, i) => {
     return (
       <Card data={item} key={i}/> 
@@ -41,7 +39,6 @@ const StoresPage = () => {
         {locationList}
       </ul>
     </InfiniteScroll>
-    
   )
 }
 
