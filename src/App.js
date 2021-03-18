@@ -64,7 +64,7 @@ export default App;
 // BONUS
 // 9. Videos
 //// 9a. Use Router
-  // 9b. Query API and store data
+  //// 9b. Query API and store data
   // 9c. display the list of videos thumbnails on the page and two-way bind them to a checkbox input
-  // 9d. create a video player
+  //// 9d. create a video player
 // 10. Create map pin functionality

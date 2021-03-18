@@ -1,7 +1,6 @@
 import {useState, useEffect } from 'react';
 import useFetchData from '../hooks/useFetchData';
-import ReactHlsPlayer from 'react-hls-player';
-
+import VideoPlayer from '../components/VideoPlayer';
 
 
 const VideosPage = () => {
@@ -13,28 +12,31 @@ const VideosPage = () => {
   } = useFetchData()
 
   useEffect(() => {
-    fetchData(0, 'video')
+    fetchData(0, 'video');
   }, [])
 
+  useEffect(() => {
+    console.log(data);
+  }, [isLoading])
 
-  console.log(data[0].manifest_url);
+  console.log(data[0]);
+
+  // const thumbnails = data.map(item => {
+  //   return (
+  //     <img src={item.thumbnail} alt=""/>
+  //   )
+  // })
+
+
   return (
     <div>
-      {isLoading ?
+      {!data ?
         <p>Hold on...</p>
         :
-        <ReactHlsPlayer
-          url={data[0].manifest_url}
-          autoplay={false}
-          controls="true"
-          width="100%"
-          height="auto"
-        />
-      }
+        <VideoPlayer data={data} />
+      } 
     </div>
   )
 }
 
 export default VideosPage;
-
-{/*  */}

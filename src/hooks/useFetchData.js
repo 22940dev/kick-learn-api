@@ -22,7 +22,10 @@ const useFetchData = () => {
       // if there's a next page, increment page in state. If there isn't, turn off hasMore flag
       res.data.next_page ? setPage(prevPage => prevPage + 1) : setHasMore(false)
       setIsLoading(false)
-    }).catch(error => console.log(error))
+    }).catch(error => {
+      console.log(error);
+      setIsLoading(false)
+    })
   }
 
   return {data, isLoading, page, hasMore, fetchData}
