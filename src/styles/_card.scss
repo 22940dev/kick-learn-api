@@ -62,10 +62,9 @@
     &-count {
       font-weight: bold;
     }
-
   }
-
 }
+
 
 // MEDIA QUERIES
 /* small tablet */
@@ -84,6 +83,7 @@
     }
   }
 }
+
 /* mobile */
 @media (max-width: 480px) {
   .card {
