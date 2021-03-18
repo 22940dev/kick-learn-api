@@ -1,5 +1,6 @@
 import {useState, useEffect } from 'react';
 import useFetchData from '../hooks/useFetchData';
+import ReactHlsPlayer from 'react-hls-player';
 
 
 
@@ -8,21 +9,32 @@ const VideosPage = () => {
   const {
     data,
     isLoading,
-    hasMore,
     fetchData
   } = useFetchData()
 
-  // useEffect(() => {
-  //   fetchData(0, 'video')
-  // }, [])
+  useEffect(() => {
+    fetchData(0, 'video')
+  }, [])
 
-  console.log(data);
 
+  console.log(data[0].manifest_url);
   return (
     <div>
-      <p>I'm a video player</p>
+      {isLoading ?
+        <p>Hold on...</p>
+        :
+        <ReactHlsPlayer
+          url={data[0].manifest_url}
+          autoplay={false}
+          controls="true"
+          width="100%"
+          height="auto"
+        />
+      }
     </div>
   )
 }
 
 export default VideosPage;
+
+{/*  */}
