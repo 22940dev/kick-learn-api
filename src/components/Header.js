@@ -1,5 +1,5 @@
 import logo from '../assets/logo-white.png';
-import { Link } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
 
 const Header = () => {
 
@@ -16,10 +16,10 @@ const Header = () => {
         <nav className="header__nav">
           <ul>
             <li>
-              <Link to="/" className="header__nav-link">Stores</Link>
+              <NavLink to="/" className="header__nav-link" exact>Stores</NavLink>
             </li>
             <li>
-              <Link to="/videos" className="header__nav-link">Videos</Link>
+              <NavLink to="/videos" className="header__nav-link" exact>Videos</NavLink>
             </li>
           </ul>
         </nav>

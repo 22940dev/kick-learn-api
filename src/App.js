@@ -10,7 +10,7 @@ import ScrollToTop from 'react-scroll-to-top'; // scroll to top button
 function App() {
   
   return (
-    <Router basename="/">
+    <Router basename={process.env.PUBLIC_URL}>
       <div className="App">
         <ScrollToTop 
           smooth 
