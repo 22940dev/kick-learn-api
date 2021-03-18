@@ -4,17 +4,26 @@ import ReactHlsPlayer from 'react-hls-player';
 
 
 const VideoPlayer = ({ data }) => {
-  const [index, setIndex] = useState(0)
-  console.log(data);
+  const [currentVidIndex, setCurrentVidIndex] = useState(0);
+
+  const thumbnails = data.map((item, i) => {
+    return (
+      <img src={item.thumbnail} alt="" key={i}/>
+    )
+  })
 
   return (
-    <ReactHlsPlayer
-      url={data[0].manifest_url}
-      autoplay={false}
-      controls="true"
-      width="100%"
-      height="auto"
-    />
+    <div className="player__container">
+      <ReactHlsPlayer
+        url={data[currentVidIndex].manifest_url}
+        autoplay={false}
+        controls="true"
+        width="100%"
+        height="auto"
+      />
+      {thumbnails}
+
+    </div>
   )
 }
 

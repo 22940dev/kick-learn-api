@@ -1,10 +1,9 @@
-import {useState, useEffect } from 'react';
+import {useEffect } from 'react';
 import useFetchData from '../hooks/useFetchData';
 import VideoPlayer from '../components/VideoPlayer';
 
 
 const VideosPage = () => {
-  const [currentVid, setCurrentVid] = useState({});
   const {
     data,
     isLoading,
@@ -14,15 +13,6 @@ const VideosPage = () => {
   useEffect(() => {
     fetchData(0, 'video');
   }, [])
-
-  console.log(data[0]);
-
-  // const thumbnails = data.map(item => {
-  //   return (
-  //     <img src={item.thumbnail} alt=""/>
-  //   )
-  // })
-
 
   return (
     <div>
