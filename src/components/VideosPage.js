@@ -15,10 +15,6 @@ const VideosPage = () => {
     fetchData(0, 'video');
   }, [])
 
-  useEffect(() => {
-    console.log(data);
-  }, [isLoading])
-
   console.log(data[0]);
 
   // const thumbnails = data.map(item => {
@@ -30,7 +26,7 @@ const VideosPage = () => {
 
   return (
     <div>
-      {!data ?
+      {isLoading ?
         <p>Hold on...</p>
         :
         <VideoPlayer data={data} />
