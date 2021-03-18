@@ -47,11 +47,11 @@ export default App;
 //// 4. Loop over the data and render it on the page
   //// 4a. Pass the props to Card.js
   //// 4c. Create a separate locations list component
-  // 4d. create a preloader
+  //// 4d. create a preloader
 
 //// >. Come up with DESIGN
 //// 5. Add SCSS stylesheet?
-// 6. Style
+//// 6. Style
   //// >. Get fonts
   //// >. Get colors
   //// >. Change title and favicon

@@ -20,7 +20,7 @@
   }
 
   &__nav-link {
-    font-size: 2rem;
+    font-size: calc(1.5rem + 0.5vw);
     margin: 0 $space-m;
     padding: 1.5rem 0;
     position: relative;
@@ -43,4 +43,22 @@
         opacity: 1;
       }
     }
+}
+
+// MEDIA QUERIES
+/* small tablet */
+@media (max-width: 768px) {
+  .header {
+    &__flex-parent {
+      padding: $space-s $space-m;
+    }
+  }
+}
+/* mobile */
+@media (max-width: 480px) {
+  .header {
+    &__logo {
+      width: 40%;
+    }
+  }
 }

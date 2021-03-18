@@ -30,3 +30,18 @@
     }
   }
 }
+
+
+// MEDIA QUERIES
+@media (max-width: 650px) {
+  .playlist {
+    & fieldset {
+      flex-wrap: wrap;
+    }
+
+    &__thumbnail {
+      width: 30%;
+
+    }
+  }
+}

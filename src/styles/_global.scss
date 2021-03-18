@@ -65,11 +65,20 @@ fieldset {
 }
 
 
-// .scroll-to-top {
-//   height: 50px;
-//   width: 50px;
-//   position: sticky;
-//   bottom: $space-l;
-//   left: $space-l;
-// }
+// MEDIA QUERIES
 
+/* small tablet */
+@media (max-width: 768px) {
+  body {
+    font-size: 1.6rem;
+  }
+
+  .wrapper {
+    width: 100%;
+    padding: 0 20px;
+  }
+}
+/* mobile */
+@media (max-width: 480px) {
+
+}

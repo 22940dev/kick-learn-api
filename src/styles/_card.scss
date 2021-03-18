@@ -5,7 +5,7 @@
   "logo kicks";
   align-content: center;
 
-  padding: $space-l ($space-l * 2);
+  padding: $space-m ($space-l * 2);
   margin: 3rem 0;
   background-color: $secondary-light;
   position: relative;
@@ -30,7 +30,7 @@
 
   &__name {
     grid-area: title;
-    font-size: 2.5rem;
+    font-size: calc(1.5rem + 0.5vw);
     font-weight: bold;
   }
 
@@ -38,22 +38,24 @@
     @include flex ($justify: space-between);
     grid-area: kicks;
     align-self: end;
+    text-align: center;
+    margin: 0 $space-s;
 
     & li {
-      @include flex (column, center, center)
+      @include flex (column, center, center);
     }
 
     &-icon-container {
       @include flex(default, center, center);
-      width: calc(5rem + 0.5vw);
-      height: calc(5rem + 0.5vw);
+      width: calc(4rem + 0.5vw);
+      height: calc(4rem + 0.5vw);
       border: 3px solid $secondary;
       border-radius: 50%;
       margin-bottom: $space-s;
     }
   
     &-icon {
-      font-size: calc(2rem + 0.5vw);
+      font-size: calc(1.5rem + 0.5vw);
       color: $secondary;
     }
 
@@ -63,4 +65,50 @@
 
   }
 
+}
+
+// MEDIA QUERIES
+/* small tablet */
+@media (max-width: 768px) {
+  .card {
+    grid-template-columns: 25% auto;
+    padding: $space-m;
+    padding-left: $space-m + $space-l;
+
+    &__kicks {
+      font-size: 1.5rem;
+    }
+
+    &__count {
+      display: block;
+    }
+  }
+}
+/* mobile */
+@media (max-width: 480px) {
+  .card {
+    grid-template-areas: 
+      "logo"
+      "title"
+      "kicks";
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(3, auto);
+    justify-items: center;
+    grid-gap: $space-m;
+    padding-right: $space-s;
+    padding-left: $space-m + $space-s;
+
+    &::before {
+      width: $space-m;
+    }
+
+    &__title {
+      margin: $space-s;
+    }
+
+    &__kicks {
+      width: 100%;
+      justify-content: space-evenly;
+    }
+  }
 }
