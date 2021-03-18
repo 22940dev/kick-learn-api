@@ -1,7 +1,7 @@
 import { useEffect } from 'react'
 import useFetchData from '../hooks/useFetchData';
 import InfiniteScroll from 'react-infinite-scroll-component'; 
-import Card from './Card';
+import StoreCard from './StoreCard';
 
 
 
@@ -23,7 +23,7 @@ const StoresPage = () => {
   // creates a list of Card components that accept a location object as a props
   const locationList = data.map((item, i) => {
     return (
-      <Card data={item} key={i}/> 
+      <StoreCard data={item} key={i}/> 
     )
   })
 

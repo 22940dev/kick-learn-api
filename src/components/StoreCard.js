@@ -2,7 +2,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faWalking, faReceipt, faQrcode } from '@fortawesome/free-solid-svg-icons';
 
 
-const Card = ({ data }) => {
+const StoreCard = ({ data }) => {
   
   const { name, logo, kicks } = data;
   const { walk_in, receipt, scan } = kicks
@@ -57,6 +57,6 @@ const Card = ({ data }) => {
   )
 }
 
-export default Card;
+export default StoreCard;
 
 
