@@ -1,0 +1,17 @@
+.loader {
+  display: block;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  border: 5px solid $secondary;
+  border-bottom-color: $accent;
+  border-top-color: $accent;
+  animation: rotate 2s linear infinite;
+  margin: 10rem auto;
+}
+
+@keyframes rotate {
+  0% {transform: rotate(0);}
+  50% {transform: rotate(180deg);}
+  100% {transform: rotate(359deg);}
+}

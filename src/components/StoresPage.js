@@ -2,6 +2,7 @@ import { useEffect } from 'react'
 import useFetchData from '../hooks/useFetchData';
 import InfiniteScroll from 'react-infinite-scroll-component'; 
 import StoreCard from './StoreCard';
+import Loader from './Loader';
 
 
 
@@ -35,7 +36,7 @@ const StoresPage = () => {
       dataLength={data.length}
       next={() => fetchData(page, 'location')}
       hasMore={hasMore}
-      loader={<p>Hold On</p>}
+      loader={<Loader />}
       className='scroll'
     >
       <ul>

@@ -1,6 +1,7 @@
 import {useEffect, Fragment } from 'react';
 import useFetchData from '../hooks/useFetchData';
 import VideoPlayer from '../components/VideoPlayer';
+import Loader from './Loader';
 
 
 const VideosPage = () => {
@@ -17,7 +18,7 @@ const VideosPage = () => {
   return (
     <Fragment>
       {isLoading ?
-        <p>Hold on...</p>
+        <Loader />
         :
         <VideoPlayer data={data} />
       } 

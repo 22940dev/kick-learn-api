@@ -60,7 +60,7 @@ export default App;
   //// 6c. Style List
   //// 6d. Style general app
   // 6e. Responsiveness
-  // 6f. Style Videos Page
+  //// 6f. Style Videos Page
 //// 7. Implement infinite scroll
   //// 7a. move API call into a custom hook
   //// 7b. change the endpoint to accept a page# variable
