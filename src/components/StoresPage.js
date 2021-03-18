@@ -23,7 +23,10 @@ const StoresPage = () => {
   // creates a list of Card components that accept a location object as a props
   const locationList = data.map((item, i) => {
     return (
-      <StoreCard data={item} key={i}/> 
+      <StoreCard 
+        data={item} 
+        key={i}
+      /> 
     )
   })
 

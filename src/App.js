@@ -12,13 +12,24 @@ function App() {
   return (
     <Router basename="/">
       <div className="App">
-        <ScrollToTop smooth color="#0098D6"/>
+        <ScrollToTop 
+          smooth 
+          color="#0098D6"
+        />
 
         <Header />
         <main>
           <div className="wrapper">
-            <Route path="/" exact component={StoresPage} />
-            <Route path="/videos" exact component={VideosPage} />
+            <Route 
+              path="/" 
+              exact 
+              component={StoresPage} 
+            />
+            <Route 
+              path="/videos" 
+              exact 
+              component={VideosPage} 
+            />
           </div>
         </main>
       </div>

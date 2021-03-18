@@ -21,7 +21,9 @@ h5,
 h6,
 ul,
 p,
-button {
+button,
+form,
+fieldset {
     margin: 0;
     padding: 0;
 }
@@ -44,6 +46,10 @@ img {
 button {
     border: none;
     cursor: pointer;
+}
+
+fieldset {
+  border: none;
 }
 
 

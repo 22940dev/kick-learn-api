@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import ReactHlsPlayer from 'react-hls-player';
+import VideoPlaylist from './VideoPlaylist';
 
 
 
@@ -11,24 +12,6 @@ const VideoPlayer = ({ data }) => {
     setCurrentVidIndex(value);
   }
 
-  // creates a list of clickable video thumbnails
-  const thumbnails = data.map((item, i) => {
-    // for some reason strict comparison doesn't work for 'checked' attr, even though these are the same type (number) >:{
-    return (
-      <label key={i}>
-        <input 
-          type="radio"
-          name="thumbnail"
-          value={i}
-          checked={currentVidIndex == i}
-          onChange={e => handleChange(e.target)}  
-        />
-        <span className="sr-only">Video</span>
-        <img src={item.thumbnail} alt="" />
-      </label>
-    )
-  })
-
   return (
     <div className="video__container">
       <ReactHlsPlayer
@@ -39,12 +22,11 @@ const VideoPlayer = ({ data }) => {
         height="auto"
         className="video__player"
       />
-
-      <form className="video__playlist">
-        <fieldset>
-          {thumbnails}
-        </fieldset>
-      </form>
+      <VideoPlaylist 
+        handleChange={handleChange} 
+        data={data} 
+        currentVidIndex={currentVidIndex}
+      />
     </div>
   )
 }

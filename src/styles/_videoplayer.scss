@@ -1,0 +1,16 @@
+.video {
+
+  &__container {
+    background: $secondary;
+    margin: $space-l 0;
+    padding: $space-s;
+    padding-bottom: $space-m;
+    border-radius: $corner;
+  }
+
+  &__player {
+    background: $typo;
+    
+  }
+
+}

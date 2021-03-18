@@ -18,7 +18,11 @@ const StoreCard = ({ data }) => {
 
   return (
     <li className="card">
-      <img className="card__logo" src={logo} alt=""></img>
+      <img 
+        className="card__logo" 
+        src={logo} 
+        alt="" 
+      />
       <p className="card__name">{name}</p>
 
       <ul className="card__kicks">

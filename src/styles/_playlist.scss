@@ -1,0 +1,32 @@
+.playlist {
+  width: 100%;
+
+  & fieldset {
+    @include flex($align: center);
+    gap: $space-s;
+    padding-top: $space-m;
+    width: 100%;
+  }
+
+  &__thumbnail {
+    position: relative;
+    width: 20%;
+
+    &-radio {
+      opacity: 0;
+      
+      &:hover + .playlist__thumbnail-img,
+      &:focus + .playlist__thumbnail-img,
+      &:checked + .playlist__thumbnail-img {
+        border: 3px solid $primary;
+        filter: brightness(100%);
+      }
+    }
+
+    &-img {
+      margin-top: -($space-m);
+      border: 3px solid transparent;
+      filter: brightness(70%);
+    }
+  }
+}
